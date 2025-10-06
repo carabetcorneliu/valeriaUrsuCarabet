@@ -54,6 +54,8 @@
       },
       "scripts": {
           "dev": "vite",
-          "build": "vite build"
+          "build": "vite build",
+          "preview": "vite preview",
+          "postbuild": "cp -r public/. dist/ 2>/dev/null || :"
       }
   }

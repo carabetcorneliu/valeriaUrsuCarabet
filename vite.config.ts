@@ -4,6 +4,7 @@
   import path from 'path';
 
   export default defineConfig({
+    base: '/',
     plugins: [react()],
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
@@ -51,7 +52,11 @@
     },
     build: {
       target: 'esnext',
-      outDir: 'build',
+      outDir: 'dist',
+      // Ensure static assets are properly handled
+      assetsDir: 'assets',
+      // Generate source maps for better debugging
+      sourcemap: true,
     },
     server: {
       port: 3000,
